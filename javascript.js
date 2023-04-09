@@ -23,4 +23,17 @@ function getComputerChoice(){
     return choice;
 }
 
-console.log(getComputerChoice());
+// a function to get the player choice
+
+function getPlayerChoice(){
+    let choice = prompt("What do you play ?");
+    choice = choice.toLowerCase();
+    return choice;
+}
+alert(getPlayerChoice());
+// a function for the round itself
+
+function playRound(playerChoice, computerChoice){
+
+
+}
