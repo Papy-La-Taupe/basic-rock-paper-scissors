@@ -41,15 +41,37 @@ function playRound(playerChoice, computerChoice){
     
     // if the player wins
     
-    else if (playerChoice === "rock" && computerChoice === "scissors"){console.log("You win !");}
-    else if (playerChoice === "paper" && computerChoice === "rock"){console.log("You win !");}
-    else if (playerChoice === "scissors" && computerChoice === "paper"){console.log("You win !");}
+    else if (playerChoice === "rock" && computerChoice === "scissors"){console.log("You win !"); win += 1;}
+    else if (playerChoice === "paper" && computerChoice === "rock"){console.log("You win !"); win += 1;}
+    else if (playerChoice === "scissors" && computerChoice === "paper"){console.log("You win !"); win += 1;}
     
     // if the player loses
     
-    else console.log("You lost...");
+    else console.log("You lost..."); lost += 1;
 }
 
-playRound(getPlayerChoice(),getComputerChoice());
-playRound(getPlayerChoice(),getComputerChoice());
-playRound(getPlayerChoice(),getComputerChoice());
+// So I can now call : playRound(getPlayerChoice(),getComputerChoice()) to run the round.
+
+//now for the whole game with counter itself
+
+function game(){
+
+    // I play exactly 5 rounds (without a loop)
+
+    playRound(getPlayerChoice(),getComputerChoice())
+    playRound(getPlayerChoice(),getComputerChoice())
+    playRound(getPlayerChoice(),getComputerChoice())
+    playRound(getPlayerChoice(),getComputerChoice())
+    playRound(getPlayerChoice(),getComputerChoice())
+    
+    // I console.log() who won
+
+    if(lost === win){console.log("That's a tie !");}
+    else if(lost > win){console.log("Sadly you lost "+lost+" rounds, and doing so, the game...");}
+    else console.log("Congratulation ! You won "+win+" rounds, and so, victory is yours !");
+}
+
+//Finally, I simply set my counters and call one function to play.
+let win = 0;
+let lost = 0;
+game();
