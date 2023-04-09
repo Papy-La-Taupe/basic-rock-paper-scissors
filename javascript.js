@@ -30,10 +30,26 @@ function getPlayerChoice(){
     choice = choice.toLowerCase();
     return choice;
 }
-alert(getPlayerChoice());
+
 // a function for the round itself
 
 function playRound(playerChoice, computerChoice){
 
+    // if it's a tie
 
+    if (playerChoice === computerChoice){console.log("It's a tie !");}
+    
+    // if the player wins
+    
+    else if (playerChoice === "rock" && computerChoice === "scissors"){console.log("You win !");}
+    else if (playerChoice === "paper" && computerChoice === "rock"){console.log("You win !");}
+    else if (playerChoice === "scissors" && computerChoice === "paper"){console.log("You win !");}
+    
+    // if the player loses
+    
+    else console.log("You lost...");
 }
+
+playRound(getPlayerChoice(),getComputerChoice());
+playRound(getPlayerChoice(),getComputerChoice());
+playRound(getPlayerChoice(),getComputerChoice());
